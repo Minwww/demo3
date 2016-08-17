@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type"  content="text/html; charset=utf-8">
+<title>练习</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<style>
+	*{margin:0;padding:0;}
+
+     ul{
+     	width:300px;
+     	margin:30px  auto;
+     }
+
+
+	li{
+		width:140px;
+		height:200px;
+		overflow:hidden;
+		position:relative;
+		float:left;
+		list-style:none;
+		margin-top:10px;
+		margin-left:10px;
+
+	}
+    
+	.tagImg1{
+		display:inline-block;
+		width:140px;
+		height:200px;
+		position:absolute;
+		top:0;
+		left:0;
+	}
+	.tagImg1 img{
+		width:100%;
+		height:100%;
+	}
+	.tagDiv1{
+		width:133px;
+		height:193px;
+		position:absolute;
+		top:227px;
+		left:0;
+		border:1px solid #ddd;
+		background:#fff;
+		padding-top:5px;
+		padding-left:5px;
+		font-size:12px;
+		color:#333;
+		position:relative;
+
+	}
+	h3{
+		padding-top:5px;
+		font-weight:normal;
+	}
+	h3 span{
+		font-size:12px;
+		color:#afafc4;
+		padding-left:4px;
+	}
+	
+	.tagDiv1 p{
+		padding:5px 0;
+	}
+
+	.rating-star{
+		display:inline-block;
+		width:55px;
+		height:11px;
+		
+	}
+
+	.t1 .rating-star{
+		background:url(images/ic_rating_s.png) 0 -44px no-repeat;
+	}
+	.t2 .rating-star{
+		background:url(images/ic_rating_s.png) 0 -33px no-repeat;
+	}
+	.t3 .rating-star{
+		background:url(images/ic_rating_s.png) 0 -44px no-repeat;
+	}
+	.t4 .rating-star{
+		background:url(images/ic_rating_s.png) 0 -44px no-repeat;
+	}
+
+	.btn{
+		display:inline-block;
+		width:90px;
+		height:24px;
+		line-height:24px;
+		background:#268dcd;
+		color:#fff;
+		border-radius:2px;
+		text-decoration:none;
+		text-align:center;
+	}
+
+
+
+</style>
+<script>
+
+
+$(document).ready(function(){
+	var moveHeight = 200,
+		moveTime = 300,
+		curMove = null;
+
+	$('.caselist li').hover(function(){
+		var curLi = $(this); 
+		
+		curMove = setTimeout(function(){
+			curLi.children('.tagImg1').animate({
+				top:'-'+moveHeight+'px'
+			},moveTime);
+			curLi.children('.tagDiv1').animate({
+				top:'0px'
+			},moveTime);
+	},200); 
+		},function(){
+			clearTimeout(curMove);
+			$(this).children('.tagImg1').animate({
+				top:'0px'
+			},moveTime);
+			$(this).children('.tagDiv1').animate({
+				top:moveHeight + 'px'
+			},moveTime);
+
+	});
+})
+
+
+</script>
+</head>
+<body>
+<ul class="caselist">
+	<li>
+		<a href="#"  class="tagImg1" target="_blank"><img src="images/p2358355793.jpg" /></a>
+		<div class="tagDiv1">		
+			<h3>微微一笑很倾城<span>2016</span></h3>
+			<p class="t1"><i class="rating-star"></i>5.5</br>(21368人评价）</p>
+			<p>105分钟 中国大陆</p>
+			<p>导演 赵天宇</p>
+			<p>主演 井柏然/杨颖/李沁</p>
+			<p><a href="#l" target="_blank" class="btn">选座购票</a></p>
+		</div>
+	</li>
+		<li>
+		<a href="#"  class="tagImg1" target="_blank"><img src="images/p2369022569.jpg" /></a>
+		
+		<div class="tagDiv1">
+			
+			<h3>使徒行者</h3>
+			<p class="t2"><i class="rating-star"></i>6.9 </br>(23740人评价）</p>
+			<p>190分钟 香港</p>
+			<p>导演 文伟鸿</p>
+			<p>主演 张家辉/古天乐</p>
+			<p><a href="#" target="_blank" class="btn">选座购票</a></p>
+		</div>
+	</li>
+		<li>
+		<a href="#"  class="tagImg1" target="_blank"><img src="images/p2370646859.jpg" /></a>
+		
+		<div class="tagDiv1">
+		
+			<h3>危城</h3>
+			<p class="t3"><i class="rating-star"></i>5.7 </br>(6844人评价）</p>
+			<p>120分钟 中国大陆</p>
+			<p >导演 陈木胜</p>
+			<p>主演 刘青云/古天乐</p>
+			<p><a href="#l" target="_blank" class="btn">选座购票</a></p>
+		</div>
+	</li>
+		<li>
+		<a href="#"  class="tagImg1" target="_blank"><img src="images/p2372098911.jpg" /></a>
+		
+		<div class="tagDiv1">
+			
+			<h3>盗墓笔记</h3>
+			<p class="t4"><i class="rating-star"></i>4.9 </br>(87793人评价）</p>
+			<p>123分钟 中国大陆</p>
+			<p>导演 李仁港</p>
+			<p>主演 井柏然/鹿晗</p>
+			<p><a href="#" target="_blank" class="btn">选座购票</a></p>
+		</div>
+	</li>
+</ul>
+</body>
+</html>
